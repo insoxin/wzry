@@ -22,4 +22,4 @@ jobs:
     - name: 'Get points'
       env:
         WZRY_h5sign: ${{ secrets.WZRY_h5sign }}
-      run: python wzry.py
+      run: python3 wzry.py
