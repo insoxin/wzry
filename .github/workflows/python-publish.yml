@@ -3,7 +3,7 @@ name: '王者营地 Auto Get Points'
 on:
   push:
     branches: 
-      - master
+      - main
   schedule:
     - cron: '0 17 * * *'
 
