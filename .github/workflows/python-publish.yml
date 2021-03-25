@@ -1,0 +1,25 @@
+name: 'Hostloc Auto Get Points'
+
+on:
+  push:
+    branches: 
+      - master
+  schedule:
+    - cron: '0 17 * * *'
+
+jobs:
+  get_points:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout codes'
+      uses: actions/checkout@v2
+    - name: 'Set python'
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+    - name: 'Install dependencies'
+      run: python -m pip install --upgrade requests pyaes
+    - name: 'Get points'
+      env:
+        WZRY_h5sign: ${{ secrets.WZRY_h5sign }}
+      run: python wzry.py
