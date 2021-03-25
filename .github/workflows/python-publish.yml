@@ -1,4 +1,4 @@
-name: 'Hostloc Auto Get Points'
+name: '王者营地 Auto Get Points'
 
 on:
   push:
